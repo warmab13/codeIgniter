@@ -9,7 +9,10 @@ class Codigofacilito extends CI_Controller {
 	}
 
 	function index(){
+		$this->load->library('menu',array('Inicio','Contacto','Cursos','Acerca De'));
+		$data['mi_menu'] = $this->menu->construirMenu();
 		$this->load->view('codigofacilito/headers');
+		$this->load->view('codigofacilito/bienvenido', $data);
 
 	}
 
